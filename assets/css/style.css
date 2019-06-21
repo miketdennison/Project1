@@ -1,0 +1,11 @@
+.card{
+    margin-top: 30%;
+}
+
+body{
+    background-image: url(../images/restaurant-bgfade.jpg)
+}
+
+#survey{
+    border: 1px solid #8CDBBE;
+}
