@@ -7,7 +7,7 @@ body{
 }
 
 #survey{
-    border: 1px solid #e65100;
+    border: 1px solid #1d7d5a;
     border-radius: 2rem;
     font-family: 'Roboto', sans-serif;
     padding:1em;
@@ -36,4 +36,10 @@ ul {
 
 #surveyAnswer{
     text-align: left;
+    font-size: 1.25em;
+}
+
+button{
+    background-color: #1d7d5a;
+    color: white;
 }
