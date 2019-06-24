@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Fira Sans font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-    <!-- Righeous and Roboto fonts -->
+    <!-- Righteous and Roboto fonts -->
     <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <nav class="orange darken-4">
+        <!-- <img src="assets/images/Logo1.png" class="brand-logo right"> -->
         <a href="#" class="brand-logo right">Dinder</a>
     </nav>
     <div class="container">
@@ -25,18 +26,27 @@
             <div class="col s10 offset-s1">
                 <div class="card white center-align" id="survey">
                     <span class="card-title" id="surveyQuestion">
-                        What type of food do you like?
+                        <!-- What type of food do you like? -->
                     </span>
                     <hr>
-                    <ul>
-                        <li>American</li>
+                    <table>
+                        <tbody id="surveyAnswer">
+                        <!-- <li>American</li>
                         <li>Italian</li>
-                        <li>Mexican</li>
-                    </ul>
+                        <li>Mexican</li> -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- javascript survey -->
+    <script type="text/javascript" src="assets/javascript/survey.js"></script>
 </body>
 
 </html>
