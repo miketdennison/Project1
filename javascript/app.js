@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
     // Setting click event for red check (slide left)
-    $("#red-check").on("click", function () {
+    $("#red").on("click", function () {
         $(".card").toggle("slide", {direction: "left"}, 400);
 
         $(".card").show();
