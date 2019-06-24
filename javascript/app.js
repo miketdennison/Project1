@@ -15,8 +15,7 @@ $(document).ready(function() {
     })
 
 
-    // Setting transition for "dinder" in header
-    $("#dinder").fadeIn(2200);
+ 
 
 
     var rangePrice = $("#price").val();
