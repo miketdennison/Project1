@@ -7,10 +7,11 @@ body{
 }
 
 #survey{
-    border: 1px solid #8CDBBE;
+    border: 1px solid #e65100;
     border-radius: 2rem;
     font-family: 'Roboto', sans-serif;
-    padding-top:1em;
+    padding:1em;
+    
 
 }
 
@@ -25,4 +26,14 @@ hr {
 
 nav{
     font-family: 'Righteous', cursive;
+}
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+#surveyAnswer{
+    text-align: left;
 }
