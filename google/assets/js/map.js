@@ -3,6 +3,10 @@ var map;
 var latitude;
 var longitude;
 var userLatLng;
+var locations = [];
+
+locations = res.businesses.slice();
+
 
 // Get location using HTML5
 function getLocation() {
@@ -47,6 +51,22 @@ function showMapPosition() {
         marker.addListener("click", function () {
             infowindow.open(map, marker);
         });
+
+        showChoicePosition();
+    });
+}
+
+function showChoicePosition() {
+    var infowindow = new google.maps.InfoWindow();
+    var marker = new google.maps.Marker({
+        //position: 
+        //map: map,
+        //title: "restaraunt name"
+        //icon: "http://maps.google.com/mapfiles/kml/shapes/dining.png"
+    });
+
+    marker.addListener("click", function () {
+        infowindow.open(map, marker);
     });
 }
 
