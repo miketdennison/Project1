@@ -1,4 +1,4 @@
-var googleURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAXq6ff1ouG2wpgRglmYXqf1pwgOJ95OqQ";
+var googleURL = "https://maps.googleapis.com/maps/api/js?key=";
 var map;
 var latitude;
 var longitude;
@@ -6,7 +6,6 @@ var userLatLng;
 var locations = [];
 
 locations = res.businesses.slice();
-
 
 // Get location using HTML5
 function getLocation() {
