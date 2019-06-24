@@ -33,14 +33,17 @@ header {
     background-color: orangered;
     color: white;
     text-align: right;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
+    position: relative;
 }
 
 
 #dinder {
-    font-size: 65px;
+    font-size: 55px;
     margin-right: 20px;
     margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -50,12 +53,13 @@ header {
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 50px;
-    background-color: white;
-    opacity: .85;
-    padding-left: 10px;
+    background-color: rgb(33, 51, 51);
+    color: white;
+    opacity: .95;
+    padding-left: 20px;
     padding-right: 10px;
     padding-bottom: 30px;
-    border: 1px solid black;
+    border: 1px solid rgb(29, 48, 48);
     transition: transform .5s ease-out;
 }
 
@@ -80,6 +84,7 @@ header {
 #rating {
     margin-top: 5px;
     width: 150px;
+    padding-left: 5px;
 }
 
 
@@ -90,12 +95,9 @@ header {
 }
 
 
+#restaurantPic {
+    margin-top: 30px;
 
-#description {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 18px;
-    padding-left: 20px;
 }
 
 
@@ -106,22 +108,94 @@ header {
 }
 
 
+#website:hover {
+    color: white;
+}
+
+
 #menu {
     font-size: 20px;
     padding-left: 10px;
 }
 
 
-#green-check {
-    width: 100px;
-    margin-top: 20px;
-    cursor: pointer;
+#menu:hover {
+    color: white;
 }
 
 
-#red-check {
-    width: 125px;
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
     cursor: pointer;
-}
+    outline: 0;
+    -webkit-appearance: none;
+  }
+
+  
+  /* Custom */
+  button {
+    display: inline-block;
+    position: relative;
+    padding: 20px 38px;
+    top: 0;
+    font-size: 30px;
+    font-family: "Open Sans", Helvetica;
+ 
+    background: rgba( 22, 230, 137, 1 );
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+  }
+  
+  button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+    
+    -webkit-transform: rotateX(20deg);
+       -moz-transform: rotateX(20deg);
+        -ms-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+  }
+  
+  button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+    background: rgba( 20, 224, 133, 1 );
+  }
 
 
+
+
+  #green-check {
+      background-color: rgb(30, 204, 30);
+      height: 100px;
+      margin-top: 20px;
+      margin-right: 10px;
+      width: 150px;
+  }
+
+
+  #red {
+      background-color: rgb(241, 57, 57); 
+      height: 100px;
+      margin-top: 20px;
+      width: 150px;
+  }
+
+
+
+  #button-div {
+    text-align: center;
+  }
