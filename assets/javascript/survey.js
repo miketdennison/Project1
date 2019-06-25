@@ -1,8 +1,8 @@
 
 
-var food = ["American", "Italian", "Mexican", "Barbeque", "Breakfast & Brunch", "Chicken Wings"]
+var food = ["American", "Italian", "Mexican", "Barbeque", "Breakfast", "Wings"]
 // var carryout = ["Dine-in", "Carry Out", "Delivery", "Drive-thru"]
-var distance = ["1 mile", "10 miles", "5 miles", "25 miles"]
+var distance = ["One", "Ten", "Five", "Twenty-five"]
 var price = ["$", "$$$", "$$", "$$$$"]
 var importance = ["Type", "Distance", "Price"]
 
@@ -177,7 +177,7 @@ function type() {
 
 function far() {
     empty();
-    $("#surveyQuestion").text("How far away do you want to eat??")
+    $("#surveyQuestion").text("How far away do you want to eat (in miles)?")
     // creating the checkbox
     for (var i = 0; i < distance.length; i++) {
         var check = $("<img>");
@@ -224,9 +224,9 @@ function pricepoint() {
     }
 
     // click to go to the next question
-    $(document).on("click", ".submit", function () {
-        alert("You did it!");
-    })
+    // $(document).on("click", ".submit", function () {
+    //     alert("You did it!");
+    // })
 }
 
 
