@@ -3,7 +3,7 @@
 var food = ["American", "Italian", "Mexican", "Barbeque", "Breakfast", "Wings"]
 // var carryout = ["Dine-in", "Carry Out", "Delivery", "Drive-thru"]
 var distance = ["One", "Ten", "Five", "Twenty-five"]
-var price = ["$", "$$$", "$$", "$$$$"]
+var price = ["Inexpensive", "Pricey", "Moderate", "High-end"]
 var importance = ["Type", "Distance", "Price"]
 
 // I think we just add "touchstart" to the click in order to make it touch compatible, though it may already be mobile ready
