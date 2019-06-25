@@ -205,3 +205,74 @@ button {
     text-align: center;
     margin-bottom: 30px;
   }
+
+
+
+@media only screen and (min-width: 992px) {
+
+    body {
+        background-image: url("https://static1.squarespace.com/static/5ae8b2569d5abbb1614c3bbf/5bc126eb104c7b99a3cde43a/5bc13d1c0d9297cb38866aec/1539390751979/Web_171.jpg?format=1500w");
+        background-attachment: fixed;
+    }
+
+    
+   
+
+    #dinder {
+        font-size: 45px;
+        margin-bottom: 5px;
+    }
+
+    .card {
+        width: 75%;
+        margin: 0 auto;
+        margin-top: 200px;
+        margin-bottom: 200px;;
+    }
+
+
+
+    header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+
+    .card-title {
+        font-size: 50px;
+    }
+
+    #distance {
+        font-size: 30px;
+    }
+
+    
+    #foodType {
+        font-size: 30px;
+    }
+
+
+    #price {
+        font-size: 30px;
+    }
+
+
+    #restaurantPic {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    #website {
+        font-size: 30px;
+    }
+
+
+    #menu {
+        font-size: 30px;
+    }
+
+}  
