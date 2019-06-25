@@ -227,7 +227,8 @@ button {
         width: 75%;
         margin: 0 auto;
         margin-top: 200px;
-        margin-bottom: 200px;;
+        margin-bottom: 200px;
+        opacity: .92;
     }
 
 
