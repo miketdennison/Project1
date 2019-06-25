@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="foodButton">
+        <input class="btn btn-primary" id="Breakfast" data-food= type="submit" value="Breakfast&Brunch">
+        <button class="btn btn-primary" id="American" data-food="American" type="submit">American</button>
+        <input class="btn btn-primary" id="Italian" data-food="Italian" type="button" value="Italian">
+        <input class="btn btn-primary" id="Mexican" data-food="Mexican" type="submit" value="Mexican">
+        <input class="btn btn-primary" id="Barbeque" data-food="BBQ" type="reset" value="BBQ">
+        <input class="btn btn-primary" id="Wings" data-food="Wings" type="reset" value="Wings">
+    </div>
+
+    <div id="howfar">
+
+
+            <button class="btn btn-primary" id="One" data-food="Italian" value="1609">One</button>
+            <button class="btn btn-primary" id="Five" data-food="Mexican" value="8047">Five</button>
+            <button class="btn btn-primary" id="Ten" data-food="BBQ" value="16093">Ten</button>
+            <button class="btn btn-primary" id="Twenty-five" data-food="Wings" value="40233">Twenty-Five</button>
+
+    </div>
+
+    <div id="costOFIT">
+
+
+        <button class="btn btn-primary" id="Inexpensive" value="1">$</button>
+        <button class="btn btn-primary" id="Moderate" value="2">$$</button>
+        <button class="btn btn-primary" id="Pricey" value="3">$$$</button>
+        <button class="btn btn-primary" id="High-end" value="4">$$$$</button>
+    </div>
+
+
+
+    <div id="facts"></div>
+    <div id="restName"></div>
+    <div id="rating"></div>
+    <div id="description"></div>
+
+  
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+
+
+// var american = $("#American");
+// var italian = $("#Italian");
+// var mexican = $("#Mexican");
+// var barbeque = $("#Barbeque");
+// var wings = $("#Wings");
+
+var price ="";
+$("#Inexpensive, #Moderate, #Pricey, #High-end").on("click", function() {
+    price=$(this).val();
+
+    getLocation();
+})
+
+var distance ="";
+$("#One, #Five, #Ten, #Twenty-five").on("click", function() {
+    distance=parseInt($(this).val());
+
+
+    // getLocation();
+})
+
+
+var currentFoodType="";
+$("#American, #Italian, #Mexican, #Barbeque, #Breakfast, #Wings").on("click", function(){
+    currentFoodType=$(this).attr("id");
+    distance=1000
+    // getLocation();
+});
+
+// var foodTypes = ["american", "italian", "mexican", "barbeque", "wings"];
+
+
+
+
+    function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+        // getLocation();
+
+    function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var name = currentFoodType;
+            var radius = distance;
+            var cost = price;
+            var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + name  + "&radius=" + radius + "&price="+ cost + "&latitude=32.8387374&longitude=-96.78583139999999&limit=10"
+
+
+
+            var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx";
+
+            $.getJSON({
+                url: queryURL,
+                method: "GET",
+                headers: {
+                    "accept": "application/json",
+                    "x-requested-with": "xmlhttprequest",
+                    "Access-Control-Allow-Origin": "*",
+                    "Authorization": `Bearer ${api_key}`
+                }
+            }).then(function (res) {
+
+                    console.log(res);
+                    var locations = res.businesses.slice();
+    
+                    for (i=0; i<locations.length; i++) {
+                        console.log(locations[i])
+
+                        var rating = res.businesses[i].rating;
+
+                    var name = res.businesses[i].name;
+
+                    var price = res.businesses[i].price;
+
+                    var typeOfFood = res.businesses[i].categories[0].title;
+                    var restImage = res.businesses[i].image_url;
+
+                    var lat = res.businesses[i]
+                    }
+                
+
+                $("#facts").text(price);
+                $("#restName").text(name);
+
+                $("#rating").text(rating);
+
+                $("#foodType").text(typeOfFood);  
+
+                $("#description").attr("src", restImage);
+
+
+            
+
+
+            });
+        
+
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
