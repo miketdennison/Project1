@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
 
     <title>Based on your answers...</title>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
     <script type="text/javascript"
         src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
     <!--CSS Reference-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="css/restaurantswipes.css">
 </head>
 
@@ -32,63 +31,64 @@
 
             <!--Restaurant Name-->
             <div id="restaurantName">
-                <h5 class="card-title">Jake's Burger</h5>
+                <h5 class="card-title"></h5>
             </div>
 
-            <div id="links">
-                <!--Website & Menu Links-->
-                <a href="https://jakesburgersandbeer.com/" class="card-link" id="website">Website</a>
-                <a href="https://jakesburgersandbeer.com/menu/" class="card-link" id="menu">Menu</a>
-            </div>
+            <div>
+                <!--Distance-->
+                <h6 id="distance"></h6>
 
+                <strong>&middot;</strong>
 
-            <div id="row2">
-                <div id="details">
-                    <!--Distance-->
-                    <div id="facts">
-                        <h6 class="card-subtitle mb-2 text-muted" id="distance">2.3 mi</h6>
-                    </div>
+                <!--Phone Number-->
+                <p id="phone"></p>
 
-                    <!--Rating-->
-                    <div>
-                        <h6 class="card-subtitle mb-2 text-muted" id="rating">
-                            <img id="rating"
-                                src="https://2.bp.blogspot.com/-4vwxmYsQ69Y/Wj8x-_uDDeI/AAAAAAAAANw/GV93SuE7CWsifShknoP8nzA2VYtZZgqfwCLcBGAs/s1600/4stars1.jpg"
-                                alt="">
-                        </h6>
-                    </div>
+                <strong>&middot;</strong>
 
-                    <!--Food Type-->
-                    <div id="price">
-                        <p class="card-text" id="foodType">American</p>
-                    </div>
-
-                    <!--Pricing ($, $$, $$$, $$$$)-->
-                    <div id="price">$$</div>
-
-                </div>
-
-                <!--Restaurant Images-->
-                <div id="restaurantPic">
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipNgBeBIC-1gUwYn_mj9SEmamI2QiNCz28GPhNvd"
-                        style="width: 80%" alt="">
-                </div>
+                <!--Pricing ($, $$, $$$, $$$$)-->
+                <p id="price"></p>
             </div>
 
 
-
-            <!--Green Button & Red Button-->
-            <div id="button-div">
-                <button id="green-check">&#10004;</button>
-                <button id="red">X</button>
+            <div>
+                <!--Rating-->
+                <h6 class="card-subtitle mb-2 text-muted" id="rating"></h6>
             </div>
+
+            <!--Food Type-->
+            <div>
+                <p class="card-text" id="foodType"></p>
+            </div>
+
+            <!--Restaurant Images-->
+            <div id="picture"><img id="restPic"></div>
 
         </div>
+
+
+
+        <!--Green Button & Red Button-->
+        <div id="button-div">
+            <button id="red">X</button>
+            <button id="green-check">&#10004;</button>
+        </div>
+
     </div>
 
+    <div id="selected">
+        <p id="selectedName"></p>
+        <p id="selectedFoodType"></p>
+        <p id="selectedPrice"></p>
+        <p id="selectedPhone"></p>
+        <p id="selectedAddress"></p>
+        <p id="selectedRating"></p>
+        <p id="selectedDistance"></p>
+        <p id="selectedPhoto"><img id="selectedPic"></p>
+        <div id="map"></div>
+    </div>
+    
 
-
-    <script src="javascript/app.js"></script>
+    <script src="google/assets/js/map.js"></script>
 </body>
 
 </html>
