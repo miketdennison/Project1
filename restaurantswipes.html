@@ -11,63 +11,75 @@
         src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+    <!--Google Fonts Reference-->
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <!--CSS Reference-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="css/restaurantswipes.css">
 </head>
 
 <body>
+
+    <!--Header-->
     <header>
         <h6 id="dinder">dinder.</h6>
     </header>
 
+    <!-- "Food Card" -->
+    <div class="card">
+        <div class="card-body">
 
-
-    <div class="container">
-        <div id="topjunk">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <h5 class="card-title">Jake's Burger</h5>
-                    </div>
-                    <div class="row" id="facts">
-                        <div class="col-md-4">
-                            <h6 class="card-subtitle mb-2 text-muted" id="distance">2.3 mi</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h6 class="card-subtitle mb-2 text-muted" id="rating"><img id="rating"
-                                    src="https://2.bp.blogspot.com/-4vwxmYsQ69Y/Wj8x-_uDDeI/AAAAAAAAANw/GV93SuE7CWsifShknoP8nzA2VYtZZgqfwCLcBGAs/s1600/4stars1.jpg"
-                                    alt=""></h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <p class="card-text" id="foodType">American</p>
-                        </div>
-                    </div>
-                    <div class="row" id="price"></div>
-
-
-                    <div class="row">
-                        <a href="https://jakesburgersandbeer.com/" class="card-link" id="website">Website</a>
-                        <a href="https://jakesburgersandbeer.com/menu/" class="card-link" id="menu">Menu</a>
-                    </div>
-
-                    <div id="button-div">
-                        <button id="green-check">&#10004;</button>
-                        <button id="red">X</button>
-                    </div>
-
-                </div>
+            <!--Restaurant Name-->
+            <div>
+                <h5 class="card-title">Jake's Burger</h5>
             </div>
+
+            <!--Distance-->
+            <div id="facts">
+                <h6 class="card-subtitle mb-2 text-muted" id="distance">2.3 mi</h6>
+            </div>
+
+            <!--Rating-->
+            <div>
+                <h6 class="card-subtitle mb-2 text-muted" id="rating">
+                    <img id="rating"
+                        src="https://2.bp.blogspot.com/-4vwxmYsQ69Y/Wj8x-_uDDeI/AAAAAAAAANw/GV93SuE7CWsifShknoP8nzA2VYtZZgqfwCLcBGAs/s1600/4stars1.jpg"
+                        alt="">
+                </h6>
+            </div>
+
+            <!--Food Type-->
+            <div id="price">
+                <p class="card-text" id="foodType">American</p>
+            </div>
+
+            <!--Pricing ($, $$, $$$, $$$$)-->
+            <div id="price">$$</div>
+
+
+            <!--Restaurant Images-->
+            <div id="restaurantPic">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipNgBeBIC-1gUwYn_mj9SEmamI2QiNCz28GPhNvd" style="width: 80%" alt="">
+            </div>
+
+
+            <!--Website & Menu Links-->
+            <a href="https://jakesburgersandbeer.com/" class="card-link" id="website">Website</a>
+            <a href="https://jakesburgersandbeer.com/menu/" class="card-link" id="menu">Menu</a>
+
+
+            <!--Green Button & Red Button-->
+            <div id="button-div">
+                <button id="green-check">&#10004;</button>
+                <button id="red">X</button>
+            </div>
+
         </div>
-
-
     </div>
 
-    <script src="js/map.js"></script>
+
+
     <script src="javascript/app.js"></script>
 </body>
 
