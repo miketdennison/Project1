@@ -13,7 +13,7 @@ function showPosition(position) {
     // var name = "torchys";
     var queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=tacos&latitude=${latitude}&longitude=${longitude}&limit=10`
 
-    var api_key = ;
+    var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx";
 
     $.getJSON({
         url: queryURL,
@@ -38,7 +38,11 @@ function showPosition(position) {
             var typeOfFood = res.businesses[0].categories[0].title;
             var restImage = res.businesses[0].image_url;
 
-        
+            var locations = res.businesses.slice();
+
+            for (i=0; i<locations.length; i++) {
+                console.log(locations[i])
+            }
 
         console.log(rating);
 
