@@ -8,9 +8,75 @@ var importance = ["Type", "Distance", "Price"]
 
 // I think we just add "touchstart" to the click in order to make it touch compatible, though it may already be mobile ready
 
+$("#surveyAnswer").on("click", "#Type", function () {
+
+    // checking checkbox to checkmark and vice-versa
+
+    // making the data-state a variable
+    var state = $(this).attr("data-state");
+    // checking the data-state and changing it to the opposite
+    if (state === "box") {
+        // turn into a checkmark if a checkbox
+        $(this).attr("src", $(this).attr("data-true"));
+        $(this).attr("data-state", "mark");
+        $("#Price").attr("src", $("#Price").attr("data-false"))
+        $("#Price").attr("data-state", "box");
+        $("#Distance").attr("src", $("#Distance").attr("data-false"))
+        $("#Distance").attr("data-state", "box");
+    } else {
+        // turn into a checkbox if a checkmark
+        $(this).attr("src", $(this).attr("data-false"));
+        $(this).attr("data-state", "box");
+    }
+})
+// making it so they can only choose one option
+
+$("#surveyAnswer").on("click", "#Price", function () {
+
+    // checking checkbox to checkmark and vice-versa
+
+    // making the data-state a variable
+    var state = $(this).attr("data-state");
+    // checking the data-state and changing it to the opposite
+    if (state === "box") {
+        // turn into a checkmark if a checkbox
+        $(this).attr("src", $(this).attr("data-true"));
+        $(this).attr("data-state", "mark");
+        $("#Type").attr("src", $("#Type").attr("data-false"))
+        $("#Type").attr("data-state", "box");
+        $("#Distance").attr("src", $("#Distance").attr("data-false"))
+        $("#Distance").attr("data-state", "box");
+    } else {
+        // turn into a checkbox if a checkmark
+        $(this).attr("src", $(this).attr("data-false"));
+        $(this).attr("data-state", "box");
+    }
+})
+$("#surveyAnswer").on("click", "#Distance", function () {
+
+    // checking checkbox to checkmark and vice-versa
+
+    // making the data-state a variable
+    var state = $(this).attr("data-state");
+    // checking the data-state and changing it to the opposite
+    if (state === "box") {
+        // turn into a checkmark if a checkbox
+        $(this).attr("src", $(this).attr("data-true"));
+        $(this).attr("data-state", "mark");
+        $("#Price").attr("src", $("#Price").attr("data-false"))
+        $("#Price").attr("data-state", "box");
+        $("#Type").attr("src", $("#Type").attr("data-false"))
+        $("#Type").attr("data-state", "box");
+    } else {
+        // turn into a checkbox if a checkmark
+        $(this).attr("src", $(this).attr("data-false"));
+        $(this).attr("data-state", "box");
+    }
+})
 function empty() {
     $("#surveyAnswer").empty();
     $("#surveyQuestion").empty();
+    console.log(32454325);
 }
 
 function firstQuestion() {
@@ -29,70 +95,7 @@ function firstQuestion() {
         $("#surveyAnswer").append(check);
         $("#surveyAnswer").append(" " + importance[i] + "</li>")
     }
-    // making it so they can only choose one option
-    $(document).on("click", "#Type", function () {
 
-        // checking checkbox to checkmark and vice-versa
-
-        // making the data-state a variable
-        var state = $(this).attr("data-state");
-        // checking the data-state and changing it to the opposite
-        if (state === "box") {
-            // turn into a checkmark if a checkbox
-            $(this).attr("src", $(this).attr("data-true"));
-            $(this).attr("data-state", "mark");
-            $("#Price").attr("src", $("#Price").attr("data-false"))
-            $("#Price").attr("data-state", "box");
-            $("#Distance").attr("src", $("#Distance").attr("data-false"))
-            $("#Distance").attr("data-state", "box");
-        } else {
-            // turn into a checkbox if a checkmark
-            $(this).attr("src", $(this).attr("data-false"));
-            $(this).attr("data-state", "box");
-        }
-    })
-    $(document).on("click", "#Price", function () {
-
-        // checking checkbox to checkmark and vice-versa
-
-        // making the data-state a variable
-        var state = $(this).attr("data-state");
-        // checking the data-state and changing it to the opposite
-        if (state === "box") {
-            // turn into a checkmark if a checkbox
-            $(this).attr("src", $(this).attr("data-true"));
-            $(this).attr("data-state", "mark");
-            $("#Type").attr("src", $("#Type").attr("data-false"))
-            $("#Type").attr("data-state", "box");
-            $("#Distance").attr("src", $("#Distance").attr("data-false"))
-            $("#Distance").attr("data-state", "box");
-        } else {
-            // turn into a checkbox if a checkmark
-            $(this).attr("src", $(this).attr("data-false"));
-            $(this).attr("data-state", "box");
-        }
-    })
-    $(document).on("click", "#Distance", function () {
-
-        // checking checkbox to checkmark and vice-versa
-
-        // making the data-state a variable
-        var state = $(this).attr("data-state");
-        // checking the data-state and changing it to the opposite
-        if (state === "box") {
-            // turn into a checkmark if a checkbox
-            $(this).attr("src", $(this).attr("data-true"));
-            $(this).attr("data-state", "mark");
-            $("#Price").attr("src", $("#Price").attr("data-false"))
-            $("#Price").attr("data-state", "box");
-            $("#Type").attr("src", $("#Type").attr("data-false"))
-            $("#Type").attr("data-state", "box");
-        } else {
-            // turn into a checkbox if a checkmark
-            $(this).attr("src", $(this).attr("data-false"));
-            $(this).attr("data-state", "box");
-        }
-    })
 
 
 
@@ -104,19 +107,17 @@ function firstQuestion() {
     $("#submit").append(btn)
     // click to go to the next question
     $(document).on("click", ".submit", function () {
-        var price = $("#Price").attr("data-state");
-        var typeState = $("#Type").attr("data-state");
-        var howFar = $("#Distance").attr("data-state");
 
-        if (price === "mark") {
+        if ($("#Price").attr("data-state") === "mark") {
             pricepoint();
-        } else if (typeState === "mark") {
+            goBack();
+        } else if ($("#Type").attr("data-state") === "mark") {
             type();
-        } else if (howFar === "mark") {
+            goBack();
+        } else if ($("#Distance").attr("data-state") === "mark") {
             far();
+            goBack();
         }
-        ;
-
     })
 }
 
@@ -231,8 +232,8 @@ function pricepoint() {
 
 // checking checkbox to checkmark and vice-versa
 $(document).on("click", ".check", function () {
-// making everything into a box instead of check mark
-    
+    // making everything into a box instead of check mark
+
     // making the data-state a variable
     var state = $(this).attr("data-state");
     // checking the data-state and changing it to the opposite
@@ -246,7 +247,7 @@ $(document).on("click", ".check", function () {
         $(this).attr("src", $(this).attr("data-true"));
         $(this).attr("data-state", "mark");
     }
-     else if (state === "mark"){
+    else if (state === "mark") {
         // turn into a checkbox if a checkmark
         $(this).attr("src", $(this).attr("data-false"));
         $(this).attr("data-state", "box");
@@ -254,3 +255,17 @@ $(document).on("click", ".check", function () {
 })
 
 
+function goBack() {
+    var btn = $("<button>");
+    btn.text("Go Back");
+    btn.addClass("return");
+    $("#submit").append(btn);
+
+    // click to start over
+    $(document).on("click", ".return", function () {
+        event.preventDefault()
+        empty();
+        $("#submit").empty();
+        firstQuestion();
+    })
+}
