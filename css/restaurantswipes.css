@@ -33,7 +33,6 @@ header {
     background-color: orangered;
     color: white;
     text-align: right;
-    border-bottom: 1px solid white;
     position: relative;
 }
 
@@ -209,26 +208,26 @@ button {
 
 
 @media only screen and (min-width: 992px) {
-
     body {
-        background-image: url("https://static1.squarespace.com/static/5ae8b2569d5abbb1614c3bbf/5bc126eb104c7b99a3cde43a/5bc13d1c0d9297cb38866aec/1539390751979/Web_171.jpg?format=1500w");
+        background-image: url("http://taguephoto.com/wp-content/uploads/2014/11/Industrial-Restaurant-Photography-02.jpg");
         background-attachment: fixed;
     }
 
-    
    
-
     #dinder {
         font-size: 45px;
         margin-bottom: 5px;
     }
 
+
     .card {
-        width: 75%;
+        width: 55%;
         margin: 0 auto;
         margin-top: 200px;
         margin-bottom: 200px;
         opacity: .92;
+        background-color: white;
+        border: 1px solid white;
     }
 
 
@@ -241,39 +240,99 @@ button {
 
 
     .card-title {
-        font-size: 50px;
+        font-size: 40px;
+        color: black;
+        display: inline-block;
     }
 
+
+    #restaurantName, #links {
+        display: inline-block;
+    }
+
+
+    #links {
+        float: right;
+        margin-top: 40px;
+        margin-right: 40px;
+    }
+
+
     #distance {
-        font-size: 30px;
+        font-size: 20px;
+        color: rgb(90, 90, 90);
+        margin-top: 15px;
+        margin-left: 0;
+        padding-left: 0;
     }
 
     
+    #rating {
+        width: 150px;
+        margin-left: 0;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+
     #foodType {
-        font-size: 30px;
+        font-size: 20px;
+        color: black;
+        margin-left: 0;
+        padding-left: 0;
     }
 
 
     #price {
-        font-size: 30px;
+        font-size: 20px;
+        color: black;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+
+    #details {
+        float: right;
+        margin-right: 40px;
     }
 
 
     #restaurantPic {
-        margin: 0 auto;
-        width: 80%;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
 
+    img {
+        margin-left: 45px;
+    }
+
     #website {
-        font-size: 30px;
+        font-size: 20px;
+        color: black;
     }
 
 
     #menu {
-        font-size: 30px;
+        font-size: 20px;
+        color: black;
+    }
+
+    #website:hover, #menu:hover {
+        color: blue;
+    }
+
+
+    #checks {
+        clear;
+        margin-top: 0;
     }
 
 }  
+
+
+
+@media only screen and (min-width: 1100px) {
+    
+}
