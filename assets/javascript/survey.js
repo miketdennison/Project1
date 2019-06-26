@@ -7,7 +7,8 @@ var price = ["Inexpensive", "Pricey", "Moderate", "High-end"]
 var importance = ["Type", "Distance", "Price"];
 // making values
 var foodKey =
-    {Breakfast: "Breakfast&Brunch",
+{
+    Breakfast: "Breakfast&Brunch",
     American: "American",
     Italian: "Italian",
     Mexican: "Mexican",
@@ -103,7 +104,7 @@ function empty() {
 function firstQuestion() {
     $("#surveyQuestion").text("What is most important for you in your restaurant choice?")
     for (var i = 0; i < importance.length; i++) {
-        
+
         // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
@@ -158,10 +159,10 @@ function type() {
         check.attr("data-false", "assets/images/checkbox.png");
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-food", food[i]);
-        check.attr("id", food[i]); 
+        check.attr("id", food[i]);
         check.attr("data-val", value)
         check.addClass("check");
-       
+
         // putting the answers and checkbox on the page
 
         $("#surveyAnswer").append("<li>")
@@ -262,8 +263,8 @@ function pricepoint() {
         check.attr("data-val", value)
         check.addClass("check");
         // putting the answers and checkbox on the page
-// arrayOfValues.push([`${[i]} , ${value}`])
-localStorage.setItem("values",`${[i]}  ${value}`)
+        // arrayOfValues.push([`${[i]} , ${value}`])
+        localStorage.setItem("values", `${[i]}  ${value}`)
 
         $("#surveyAnswer").append("<li>")
         $("#surveyAnswer").append(check);
@@ -322,12 +323,12 @@ function goBack() {
     })
 }
 
-$(document).on("click", ".info", function(){
+$(document).on("click", ".info", function () {
     var id = $(this).attr('id');
     localStorage.setItem("id", id)
 })
 
-$(document).on("click", ".check", function(){
+$(document).on("click", ".check", function () {
     var value = $(this).attr('data-val');
     console.log(value)
     localStorage.setItem("value", value)
