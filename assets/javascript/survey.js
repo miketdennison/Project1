@@ -5,6 +5,15 @@ var food = ["American", "Italian", "Mexican", "Barbeque", "Breakfast", "Wings"]
 var distance = ["One", "Ten", "Five", "Twenty-five"]
 var price = ["Inexpensive", "Pricey", "Moderate", "High-end"]
 var importance = ["Type", "Distance", "Price"]
+// making values
+var foodKey =
+    {Breakfast: "Breakfast&Brunch",
+    American: "American",
+    Italian: "Italian",
+    Mexican: "Mexican",
+    Barbeque: "BBQ",
+    Wings: "Wings"
+}
 
 // I think we just add "touchstart" to the click in order to make it touch compatible, though it may already be mobile ready
 
@@ -82,14 +91,16 @@ function empty() {
 function firstQuestion() {
     $("#surveyQuestion").text("What is most important for you in your restaurant choice?")
     for (var i = 0; i < importance.length; i++) {
+        
         // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
         check.attr("data-state", "box");
         check.attr("data-false", "assets/images/checkbox.png");
         check.attr("data-true", "assets/images/checkmark.png");
-        check.attr("data-importance", importance[i])
-        check.attr("id", importance[i])
+        check.attr("data-importance", importance[i]);
+        check.attr("id", importance[i]);
+        
         // putting the answers and checkbox on the page
         $("#surveyAnswer").append("<li>")
         $("#surveyAnswer").append(check);
@@ -125,6 +136,9 @@ function type() {
     empty();
     $("#surveyQuestion").text("What type of food would you like to eat?")
     for (var i = 0; i < food.length; i++) {
+        // making a value
+        var value = foodKey[food[i]]
+        console.log(value);
         // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
@@ -133,7 +147,9 @@ function type() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-food", food[i]);
         check.attr("id", food[i]);
+        check.attr("value", value)
         check.addClass("check");
+       
         // putting the answers and checkbox on the page
 
         $("#surveyAnswer").append("<li>")
