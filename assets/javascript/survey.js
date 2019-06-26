@@ -76,7 +76,7 @@ $("#surveyAnswer").on("click", "#Distance", function () {
 function empty() {
     $("#surveyAnswer").empty();
     $("#surveyQuestion").empty();
-    console.log(32454325);
+    $("#submit").empty()
 }
 
 function firstQuestion() {
@@ -95,10 +95,6 @@ function firstQuestion() {
         $("#surveyAnswer").append(check);
         $("#surveyAnswer").append(" " + importance[i] + "</li>")
     }
-
-
-
-
 
     // creating submit button
     var btn = $("<button>")
@@ -143,8 +139,19 @@ function type() {
         $("#surveyAnswer").append("<li>")
         $("#surveyAnswer").append(check);
         $("#surveyAnswer").append(" " + food[i] + "</li>")
-    }
 
+
+    }
+    // creating submit button
+    var btn = $("<button>")
+    btn.text("Submit");
+    btn.addClass("submit");
+    btn.attr("id", "completed");
+    $("#submit").append(btn)
+    // click to go to next page
+    $(document).on("click", "#completed", function () {
+        window.location.href = "restaurantswipes.html";
+    })
 }
 
 
@@ -196,9 +203,15 @@ function far() {
         $("#surveyAnswer").append(" " + distance[i] + "</li>")
     }
 
-    // click to go to the next question
-    $(document).on("click", ".submit", function () {
-        pricepoint();
+    // creating submit button
+    var btn = $("<button>")
+    btn.text("Submit");
+    btn.addClass("submit");
+    btn.attr("id", "completed");
+    $("#submit").append(btn)
+    // click to go to next page
+    $(document).on("click", "#completed", function () {
+        window.location.href = "restaurantswipes.html";
     })
 }
 
@@ -223,10 +236,16 @@ function pricepoint() {
         $("#surveyAnswer").append(" " + price[i] + "</li>")
     }
 
-    // click to go to the next question
-    // $(document).on("click", ".submit", function () {
-    //     alert("You did it!");
-    // })
+    // creating submit button
+    var btn = $("<button>")
+    btn.text("Submit");
+    btn.addClass("submit");
+    btn.attr("id", "completed");
+    $("#submit").append(btn)
+    // click to go to next page
+    $(document).on("click", "#completed", function () {
+        window.location.href = "restaurantswipes.html";
+    })
 }
 
 
@@ -265,7 +284,6 @@ function goBack() {
     $(document).on("click", ".return", function () {
         event.preventDefault()
         empty();
-        $("#submit").empty();
         firstQuestion();
     })
 }
