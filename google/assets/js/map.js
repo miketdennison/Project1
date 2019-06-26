@@ -332,6 +332,7 @@ $("#red").on("click", function () {
             cycleChoices();
         } else {
             alert("You're out of choices for now");
+            window.location.href = "index.html";
         }
     }, 400);
 
