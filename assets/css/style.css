@@ -57,12 +57,20 @@ button {
       
 #footer{
     color: white;
-    text-align: center;
     margin: 0;
     padding: 0;
+    opacity: .8;
 }
 
+p{
+    margin: 0;
+}
 
+/* styling links */
+
+a:link, a:visited{
+    color: white;
+}
 
 /* media query */
 
