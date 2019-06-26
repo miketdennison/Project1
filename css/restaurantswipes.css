@@ -1,0 +1,375 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+
+body {
+    background-image: url("https://wearychef.com/wp-content/uploads/2016/04/Cajun-Honey-Glazed-Chicken-Bowls-7.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+header {
+    background-color: orangered;
+    color: white;
+    text-align: right;
+    position: relative;
+}
+
+
+#dinder {
+    font-size: 55px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+.card {
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(33, 51, 51);
+    color: white;
+    opacity: .97;
+    padding-bottom: 30px;
+    border: 1px solid rgb(29, 48, 48);
+    transition: transform .5s ease-out;
+}
+
+
+
+.card-title {
+    font-size: 65px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 40px;
+}
+
+
+
+/* Phone & distance */
+#phone {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+#distance {
+    margin-top: 30px;
+    margin-left: 70px;
+    font-size: 30px;
+    color: rgb(161, 161, 161);
+    margin-right: 10px;
+}
+
+
+#price {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+#phone, #distance, #price {
+    display: inline;
+}
+
+
+
+#rating {
+    margin-top: 10px;
+    margin-left: 70px;
+    width: 270px;
+    font-size: 30px;
+}
+
+
+
+#foodType {
+    font-size: 25px;
+    font-style: italic;
+    margin-left: 70px;
+}
+
+
+
+#restPic {
+    height: 400px;
+    width: 400px;
+}
+
+
+#selectedPic {
+    height: 400px;
+    width: 400px;
+}
+
+
+
+#map {
+    height: 300px;
+
+    margin: 20px;
+    padding: 0;
+}
+
+
+
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+  }
+
+  
+  /* Custom */
+  button {
+    display: inline-block;
+    position: relative;
+    padding: 20px 38px;
+    top: 0;
+    font-size: 30px;
+    font-family: "Open Sans", Helvetica;
+ 
+    background: rgba( 22, 230, 137, 1 );
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+  }
+  
+  button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+    
+    -webkit-transform: rotateX(20deg);
+       -moz-transform: rotateX(20deg);
+        -ms-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+  }
+  
+  button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+    background: rgba( 20, 224, 133, 1 );
+  }
+
+
+
+
+  #green-check {
+      background-color: rgb(30, 204, 30);
+      height: 100px;
+      margin-top: 40px;
+      margin-right: 10px;
+      width: 150px;
+  }
+
+
+  #red {
+      background-color: rgb(241, 57, 57); 
+      height: 100px;
+      margin-top: 40px;
+      width: 150px;
+  }
+
+
+
+  #button-div {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+
+
+  #selected {
+      background-color: white;
+      opacity: .92;
+      margin: 0 auto;
+      margin-top: 100px;
+      width: 60%; 
+      /* overflow: auto;  */
+  }
+
+
+  #selectedName {
+      font-size: 60px;
+      text-align: center;
+  }
+
+
+  #selectedFoodType,
+  #selectedPrice,
+  #selectedPhone,
+  #selectedAddress,
+  #selectedRating,
+  #selectedDistance {
+      font-size: 30px;
+      text-align: center;
+  }
+
+
+
+@media only screen and (min-width: 992px) {
+    body {
+        background-image: url("http://taguephoto.com/wp-content/uploads/2014/11/Industrial-Restaurant-Photography-02.jpg");
+        background-attachment: fixed;
+    }
+
+   
+    #dinder {
+        font-size: 45px;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+
+    .card-body {
+        text-align: center;
+    }
+
+    .card {
+        width: 52%;
+        margin: 0 auto;
+        margin-top: 150px;
+        margin-bottom: 200px;
+        opacity: .92;
+        background-color: rgb(32, 31, 31);
+        border: 1px solid rgb(32, 31, 31);
+    }
+
+
+
+    header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+
+    .card-title {
+        margin-top: 5px;
+        padding-top: 10;
+        font-family: 'Bowlby One SC', cursive;
+        font-size: 55px;
+        color: rgba(255, 255, 255, 0.836);
+        display: inline-block;
+    }
+
+
+    #restaurantName {
+        text-align: left;
+    }
+
+
+    #details {
+        text-align: left;
+        font-weight: bold;
+    }
+
+
+    #phone {
+        color: rgba(255, 255, 255, 0.836);
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #distance {
+        color:rgba(255, 255, 255, 0.836);
+        margin-top: 15px;
+        margin-left: 50px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #price {
+        color: rgba(255, 255, 255, 0.836);
+        margin-left: 0;
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #rating {
+        color: rgba(255, 255, 255, 0.836);
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+        margin-top: 0;
+        margin-left: 50px;
+        text-align: left;
+    }
+    
+    strong {
+        color: rgba(255, 255, 255, 0.836);
+        font-weight: bold;
+    }
+
+
+    #foodType {
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.836);
+        margin-left: 50px;
+        text-align: left;
+    }
+
+
+
+    #restPic {
+        margin: 0 auto;
+        height: 250px;
+    }
+
+    #checks {
+        clear;
+    }
+
+
+    #red, #green-check {
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+
+}  
+
+

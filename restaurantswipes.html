@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Based on your answers...</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Google Fonts Reference-->
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Rubik+Mono+One&display=swap" rel="stylesheet">
+
+    <!--CSS Reference-->
+    <link rel="stylesheet" type="text/css" href="css/restaurantswipes.css">
+</head>
+
+<body>
+
+    <!--Header-->
+    <header>
+        <h6 id="dinder">dinder.</h6>
+    </header>
+
+    <!-- "Food Card" -->
+    <div class="card">
+        <div class="card-body">
+
+            <!--Restaurant Name-->
+            <div id="restaurantName">
+                <h5 class="card-title"></h5>
+            </div>
+
+            <div id="details">
+                <!--Distance-->
+                <h6 id="distance"></h6>
+
+                <strong>&middot;</strong>
+
+                <!--Phone Number-->
+                <p id="phone"></p>
+
+                <strong>&middot;</strong>
+
+                <!--Pricing ($, $$, $$$, $$$$)-->
+                <p id="price"></p>
+            </div>
+
+
+            <div>
+                <!--Rating-->
+                <h6 class="card-subtitle mb-2 text-muted" id="rating"></h6>
+            </div>
+
+            <!--Food Type-->
+            <div>
+                <p class="card-text" id="foodType"></p>
+            </div>
+
+            <!--Restaurant Images-->
+            <div id="picture"><img id="restPic"></div>
+
+        </div>
+
+
+
+        <!--Green Button & Red Button-->
+        <div id="button-div">
+            <button id="red">X</button>
+            <button id="green-check">&#10004;</button>
+        </div>
+
+    </div>
+
+    <div id="selected">
+        <p id="selectedName"></p>
+        <p id="selectedFoodType"></p>
+        <p id="selectedPrice"></p>
+        <p id="selectedPhone"></p>
+        <p id="selectedAddress"></p>
+        <p id="selectedRating"></p>
+        <p id="selectedDistance"></p>
+        <p id="selectedPhoto"><img id="selectedPic"></p>
+        <div id="map"></div>
+    </div>
+    
+
+    <script src="google/assets/js/map.js"></script>
+</body>
+
+</html>
