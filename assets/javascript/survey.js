@@ -12,8 +12,17 @@ var foodKey =
     Italian: "Italian",
     Mexican: "Mexican",
     Barbeque: "BBQ",
-    Wings: "Wings"
+    Wings: "Wings",
+    One: "1609",
+    Five: "8407",
+    Ten: "16093",
+    "Twenty-five": "40233",
+    Inexpensive: "1",
+    Moderate: "2",
+    Pricey: "3",
+    "High-end": "4"
 }
+
 
 // I think we just add "touchstart" to the click in order to make it touch compatible, though it may already be mobile ready
 
@@ -203,6 +212,9 @@ function far() {
     $("#surveyQuestion").text("How far away do you want to eat (in miles)?")
     // creating the checkbox
     for (var i = 0; i < distance.length; i++) {
+        // making a value
+        var value = foodKey[distance[i]]
+        // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
         check.attr("data-state", "box");
@@ -210,6 +222,7 @@ function far() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-distance", distance[i])
         check.attr("id", distance[i]);
+        check.attr("value", value)
         check.addClass("check");
 
         // putting the answers and checkbox on the page
@@ -236,6 +249,7 @@ function pricepoint() {
     $("#surveyQuestion").text("How much money do you want to spend?")
     // creating the checkbox
     for (var i = 0; i < price.length; i++) {
+        var value = foodKey[price[i]]
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
         check.attr("data-state", "box");
@@ -243,6 +257,7 @@ function pricepoint() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-price", price[i])
         check.attr("id", price[i]);
+        check.attr("value", value)
         check.addClass("check");
 
         // putting the answers and checkbox on the page
