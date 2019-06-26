@@ -151,7 +151,6 @@ function type() {
     for (var i = 0; i < food.length; i++) {
         // making a value
         var value = foodKey[food[i]]
-        console.log(value);
         // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
@@ -160,7 +159,7 @@ function type() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-food", food[i]);
         check.attr("id", food[i]);
-        check.attr("data-val", value)
+        check.attr("data-val", value);
         check.addClass("check");
 
         // putting the answers and checkbox on the page
@@ -226,7 +225,7 @@ function far() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-distance", distance[i])
         check.attr("id", distance[i]);
-        check.attr("data-val", value)
+        check.attr("data-val", value);
         check.addClass("check");
         // putting the answers and checkbox on the page
 
@@ -258,9 +257,9 @@ function pricepoint() {
         check.attr("data-state", "box");
         check.attr("data-false", "assets/images/checkbox.png");
         check.attr("data-true", "assets/images/checkmark.png");
-        check.attr("data-price", price[i])
+        check.attr("data-price", price[i]);
         check.attr("id", price[i]);
-        check.attr("data-val", value)
+        check.attr("data-val", value);
         check.addClass("check");
         // putting the answers and checkbox on the page
         // arrayOfValues.push([`${[i]} , ${value}`])
