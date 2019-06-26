@@ -318,10 +318,10 @@ header {
         width: 52%;
         margin: 0 auto;
         margin-top: 150px;
-        margin-bottom: 200px;
+        margin-bottom: 130px;
         opacity: .97;
-        background-color: rgb(14, 14, 14);
-        border: 1px solid rgb(17, 17, 17);
+        background-color: rgb(6, 9, 14);
+        border: 1px solid rgb(6, 9, 14);
     }
 
 
@@ -350,7 +350,6 @@ header {
 
     #details {
         text-align: left;
-        font-weight: bold;
     }
 
 
@@ -362,7 +361,7 @@ header {
 
 
     #distance {
-        color:white;
+        color:rgb(143, 142, 142);
         margin-top: 15px;
         margin-left: 50px;
         font-family: 'Fjalla One', sans-serif;
@@ -420,6 +419,8 @@ header {
     }
 
 
+
+
     #selectedName {
         margin-top: 160px;
         padding-top: 10px;
@@ -463,4 +464,14 @@ header {
         font-size: 20px;
     }
 
+
+    #selectedPhoto {
+        text-align: center;
+
+        margin-bottom: 30px;
+    }
+
+    #map {
+        margin-top: 30px;
+    }
 }  
