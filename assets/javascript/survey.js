@@ -4,7 +4,7 @@ var food = ["American", "Italian", "Mexican", "Barbeque", "Breakfast", "Wings"]
 // var carryout = ["Dine-in", "Carry Out", "Delivery", "Drive-thru"]
 var distance = ["One", "Ten", "Five", "Twenty-five"]
 var price = ["Inexpensive", "Pricey", "Moderate", "High-end"]
-var importance = ["Type", "Distance", "Price"]
+var importance = ["Type", "Distance", "Price"];
 // making values
 var foodKey =
     {Breakfast: "Breakfast&Brunch",
@@ -23,7 +23,10 @@ var foodKey =
     "High-end": "4"
 }
 
+window.arrVal = arrayOfValues;
 
+
+var arrayOfValues = [];
 // I think we just add "touchstart" to the click in order to make it touch compatible, though it may already be mobile ready
 
 $("#surveyAnswer").on("click", "#Type", function () {
@@ -107,9 +110,9 @@ function firstQuestion() {
         check.attr("data-state", "box");
         check.attr("data-false", "assets/images/checkbox.png");
         check.attr("data-true", "assets/images/checkmark.png");
-        check.attr("data-importance", importance[i]);
-        check.attr("id", importance[i]);
-        
+        check.addClass("info")
+        check.attr("data-importance", importance[i])
+        check.attr("id", importance[i])
         // putting the answers and checkbox on the page
         $("#surveyAnswer").append("<li>")
         $("#surveyAnswer").append(check);
@@ -155,8 +158,8 @@ function type() {
         check.attr("data-false", "assets/images/checkbox.png");
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-food", food[i]);
-        check.attr("id", food[i]);
-        check.attr("value", value)
+        check.attr("id", food[i]); 
+        check.attr("data-val", value)
         check.addClass("check");
        
         // putting the answers and checkbox on the page
@@ -222,9 +225,8 @@ function far() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-distance", distance[i])
         check.attr("id", distance[i]);
-        check.attr("value", value)
+        check.attr("data-val", value)
         check.addClass("check");
-
         // putting the answers and checkbox on the page
 
         $("#surveyAnswer").append("<li>")
@@ -257,10 +259,11 @@ function pricepoint() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-price", price[i])
         check.attr("id", price[i]);
-        check.attr("value", value)
+        check.attr("data-val", value)
         check.addClass("check");
-
         // putting the answers and checkbox on the page
+// arrayOfValues.push([`${[i]} , ${value}`])
+localStorage.setItem("values",`${[i]}  ${value}`)
 
         $("#surveyAnswer").append("<li>")
         $("#surveyAnswer").append(check);
@@ -318,3 +321,17 @@ function goBack() {
         firstQuestion();
     })
 }
+
+$(document).on("click", ".info", function(){
+    var id = $(this).attr('id');
+    localStorage.setItem("id", id)
+})
+
+$(document).on("click", ".check", function(){
+    var value = $(this).attr('data-val');
+    console.log(value)
+    localStorage.setItem("value", value)
+})
+
+
+console.log(arrayOfValues)
