@@ -1,0 +1,39 @@
+.card{
+    margin-top: 30%;
+}
+
+body{
+    background-image: url(../images/restaurant-bgfade.jpg);
+}
+
+#survey{
+    border: 1px solid #e65100;
+    border-radius: 2rem;
+    font-family: 'Roboto', sans-serif;
+    padding:1em;
+    
+
+}
+
+hr {
+    height: 1px;
+    background-color: #e65100;
+    color: #e65100;
+    border: none;
+    margin-top:1em;
+    margin-bottom: 1em;
+}
+
+nav{
+    font-family: 'Righteous', cursive;
+}
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+#surveyAnswer{
+    text-align: left;
+}
