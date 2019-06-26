@@ -71,7 +71,9 @@ p{
 a:link, a:visited{
     color: white;
 }
-
+a:hover{
+    color: #1d7d5a;
+}
 /* media query */
 
 @media screen and (min-width: 768px) {
