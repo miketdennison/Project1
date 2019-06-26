@@ -17,7 +17,7 @@ var foodKey =
     One: "1609",
     Five: "8407",
     Ten: "16093",
-    "Twenty-five": "40233",
+    "Twenty-five": "40000",
     Inexpensive: "1",
     Moderate: "2",
     Pricey: "3",
