@@ -262,14 +262,18 @@ button {
     }
 
 
+    .card-body {
+        text-align: center;
+    }
+
     .card {
-        width: 65%;
+        width: 52%;
         margin: 0 auto;
-        margin-top: 200px;
+        margin-top: 150px;
         margin-bottom: 200px;
         opacity: .92;
-        background-color: white;
-        border: 1px solid white;
+        background-color: rgb(32, 31, 31);
+        border: 1px solid rgb(32, 31, 31);
     }
 
 
@@ -284,86 +288,88 @@ button {
     .card-title {
         margin-top: 5px;
         padding-top: 10;
-        font-size: 40px;
-        color: black;
+        font-family: 'Bowlby One SC', cursive;
+        font-size: 55px;
+        color: rgba(255, 255, 255, 0.836);
         display: inline-block;
     }
 
 
-
-
-    #restaurantName, #links {
-        display: inline-block;
-    }
-
-
-    #links {
-        float: right;
-        margin-top: 40px;
-        margin-right: 40px;
-    }
-
-
-    #distance {
-        font-size: 20px;
-        color:black;
-        margin-top: 15px;
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-    
-    #rating {
-        margin-left: 0;
-        margin-top: 0;
-        padding-left: 0;
-        color: black;
-    }
-
-
-    #foodType {
-        font-size: 20px;
-        color: black;
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-
-    #price {
-        font-size: 20px;
-        color: black;
-        margin-left: 0;
-        padding-left: 0;
+    #restaurantName {
+        text-align: left;
     }
 
 
     #details {
-        float: right;
-        margin-right: 90px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+
+    #phone {
+        color: rgba(255, 255, 255, 0.836);
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #distance {
+        color:rgba(255, 255, 255, 0.836);
+        margin-top: 15px;
+        margin-left: 50px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #price {
+        color: rgba(255, 255, 255, 0.836);
+        margin-left: 0;
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #rating {
+        color: rgba(255, 255, 255, 0.836);
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+        margin-top: 0;
+        margin-left: 50px;
+        text-align: left;
+    }
+    
+    strong {
+        color: rgba(255, 255, 255, 0.836);
+        font-weight: bold;
+    }
+
+
+    #foodType {
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.836);
+        margin-left: 50px;
+        text-align: left;
     }
 
 
 
-    #restaurantImage {
-        height: 200px;
+    #restPic {
+        margin: 0 auto;
+        height: 250px;
     }
-
-
-    img {
-        margin-left: 45px;
-    }
-
-
 
     #checks {
         clear;
-        margin-top: 0;
+    }
+
+
+    #red, #green-check {
+        margin-top: 10px;
+        padding-bottom: 10px;
     }
 
 }  
 
 
-
-@media only screen and (min-width: 1100px) {
-
-}

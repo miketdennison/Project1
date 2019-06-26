@@ -1,3 +1,109 @@
+// Connecting Teddy's page to Restaurant Swipe Page //
+var price = "";
+$("#Inexpensive, #Moderate, #Pricey, #High-end").on("click", function () {
+    price = $(this).val();
+
+    getLocation();
+})
+
+
+var distance = "";
+$("#One, #Five, #Ten, #Twenty-five").on("click", function () {
+    distance = parseInt($(this).val());
+
+
+     getLocation();
+})
+
+
+var currentFoodType = "";
+$("#American, #Italian, #Mexican, #Barbeque, #Breakfast, #Wings").on("click", function () {
+    currentFoodType = $(this).attr("id");
+    distance = 1000
+     getLocation();
+});
+
+// var foodTypes = ["american", "italian", "mexican", "barbeque", "wings"];
+
+
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+// getLocation();
+
+function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var name = currentFoodType;
+    var radius = distance;
+    var cost = price;
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + name + "&radius=" + radius + "&price=" + cost + "&latitude=32.8387374&longitude=-96.78583139999999&limit=10"
+
+
+
+    var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx";
+
+    $.getJSON({
+        url: queryURL,
+        method: "GET",
+        headers: {
+            "accept": "application/json",
+            "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin": "*",
+            "Authorization": `Bearer ${api_key}`
+        }
+    }).then(function (res) {
+
+        console.log(res);
+        var locations = res.businesses.slice();
+
+        for (i = 0; i < locations.length; i++) {
+            console.log(locations[i])
+
+            var rating = res.businesses[i].rating;
+
+            var name = res.businesses[i].name;
+
+            var price = res.businesses[i].price;
+
+            var typeOfFood = res.businesses[i].categories[0].title;
+            var restImage = res.businesses[i].image_url;
+
+            var lat = res.businesses[i]
+        }
+
+
+        $("#price").text(price);
+        $(".card-title").text(name);
+
+        $("#rating").text(rating);
+
+        $("#foodType").text(typeOfFood);
+
+        $("#restPic").attr("src", restImage);
+
+    });
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// Restaurant Swipe Page JS all below //
 var googleURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAXq6ff1ouG2wpgRglmYXqf1pwgOJ95OqQ";
 var map;
 var userLatitude;
@@ -193,9 +299,9 @@ $("#selected").hide();
 $("#green-check").on("click", function () {
     $(".card").toggle("slide", { direction: "right" }, 300);
     greenSelected();
-    
-    
-    $("#selected").toggle("slide",300);
+
+
+    $("#selected").toggle("slide", 300);
     $("#selectedName").append(userLikedRestInfo.restarauntName = locations[i].name);
     $("#selectedFoodType").append(userLikedRestInfo.restarauntFoodType = locations[i].categories[0].title);
     $("#selectedPrice").append(userLikedRestInfo.restarauntPricePoint = locations[i].price);
@@ -213,8 +319,8 @@ $("#green-check").on("click", function () {
 
 // Setting click event for red check (slide left)
 $("#red").on("click", function () {
-     // Increment i, only if green check wasn't pressed so that we can use i to load results page
-     i++;
+    // Increment i, only if green check wasn't pressed so that we can use i to load results page
+    i++;
     $(".card").toggle("slide", { direction: "left" }, 300);
 
     var newCard = $(".card");
