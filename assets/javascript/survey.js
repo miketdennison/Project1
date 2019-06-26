@@ -15,7 +15,7 @@ var foodKey =
     One: "1609",
     Five: "8407",
     Ten: "16093",
-    "Twenty-five": "40233",
+    "Twenty-five": "40000",
     Inexpensive: "1",
     Moderate: "2",
     Pricey: "3",
@@ -146,6 +146,8 @@ function type() {
     empty();
     $("#surveyQuestion").text("What type of food would you like to eat?")
     for (var i = 0; i < food.length; i++) {
+        var value = foodKey[food[i]];
+
         // creating the checkbox
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
@@ -154,6 +156,7 @@ function type() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-food", food[i]);
         check.attr("id", food[i]);
+        check.attr("data-val", value);
         check.addClass("check");
         // putting the answers and checkbox on the page
 
@@ -208,6 +211,8 @@ function far() {
     $("#surveyQuestion").text("How far away do you want to eat (in miles)?")
     // creating the checkbox
     for (var i = 0; i < distance.length; i++) {
+        var value = foodKey[distance[i]]
+
         var check = $("<img>");
         check.attr("src", "assets/images/checkbox.png")
         check.attr("data-state", "box");
@@ -215,6 +220,7 @@ function far() {
         check.attr("data-true", "assets/images/checkmark.png");
         check.attr("data-distance", distance[i])
         check.attr("id", distance[i]);
+        check.attr("data-val", value)
         check.addClass("check");
         // putting the answers and checkbox on the page
 

@@ -1,68 +1,31 @@
 
-console.log(localStorage.getItem("values"))
+userInput ='';
+
+var selectedFoodType;
+var selectedDistance;
+var selectedPrice;
+
+var localId = localStorage.getItem("id");
+var localValue = localStorage.getItem("value");
+
+console.log(localId, localValue);
 
 
-var price = "";
-$("#Inexpensive, #Moderate, #Pricey, #High-end").on("click", function () {
-    price = $(this).val();
-
-})
-var distance = "";
-$("#One, #Five, #Ten, #Twenty-five").on("click", function () {
-    distance = parseInt($(this).val());
-
-})
-var currentFoodType = "";
-$("#American, #Italian, #Mexican, #Barbeque, #Breakfast, #Wings").on("click", function () {
-    currentFoodType = $(this).attr("id");
-
-
-});
-// var foodTypes = ["american", "italian", "mexican", "barbeque", "wings"];
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-    }
+if (localId.toLowerCase() === "price") {
+    selectedPrice = localValue;
+    userInput = `price=${selectedPrice}`;
+} else if (localId.toLowerCase() === "distance") {
+    selectedDistance = localValue;
+    userInput = `radius=${selectedDistance}`;
+} else {
+    selectedFoodType = localValue;
+    userInput = `term=${selectedFoodType}`;
 }
-// getLocation();
-function showPosition(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    var name = currentFoodType;
-    var radius = distance;
-    var cost = price;
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + name + "&radius=" + radius + "&price=" + cost + "&latitude=32.8387374&longitude=-96.78583139999999&limit=10"
-    var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx";
-    $.getJSON({
-        url: queryURL,
-        method: "GET",
-        headers: {
-            "accept": "application/json",
-            "x-requested-with": "xmlhttprequest",
-            "Access-Control-Allow-Origin": "*",
-            "Authorization": `Bearer ${api_key}`
-        }
-    }).then(function (res) {
-        console.log(res);
-        var locations = res.businesses.slice();
-        for (i = 0; i < locations.length; i++) {
-            console.log(locations[i])
-            var rating = res.businesses[i].rating;
-            var name = res.businesses[i].name;
-            var price = res.businesses[i].price;
-            var typeOfFood = res.businesses[i].categories[0].title;
-            var restImage = res.businesses[i].image_url;
-            var lat = res.businesses[i]
-        }
-        $("#price").text(price);
-        $(".card-title").text(name);
-        $("#rating").text(rating);
-        $("#foodType").text(typeOfFood);
-        $("#restPic").attr("src", restImage);
-    });
-}
+
+var yelpURL =`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?${userInput}`
+
+
+
 // Restaurant Swipe Page JS all below //
 var googleURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAXq6ff1ouG2wpgRglmYXqf1pwgOJ95OqQ";
 var map;
@@ -93,6 +56,7 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
             userLatitude = position.coords.latitude;
             userLongitude = position.coords.longitude;
+            yelpURL += `&latitude=${userLatitude}&longitude=${userLongitude}&limit=10`;
             yelpRequest();
         });
     } else {
@@ -108,7 +72,7 @@ function showMapPosition() {
     }).then(function () {
         userLatLng = new google.maps.LatLng(userLatitude, userLongitude);
         var myOptions = {
-            zoom: 12,
+            zoom: 11,
             center: userLatLng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -149,8 +113,12 @@ function showChoicePosition() {
 }
 // Populate Array with Yelp Restaraunts based on user's preferances
 function yelpRequest() {
-    var queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=tacos&latitude=${userLatitude}&longitude=${userLongitude}&limit=10`
-    var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx";
+    var name = selectedFoodType;
+    var radius = selectedDistance;
+    var cost = selectedPrice;
+    var queryURL = yelpURL;
+
+    var api_key = "Rr_V5iu9DjxsH7md3UZvyf_trptrOfVlFe2HQGLHEJJc4w9Kx2ppzSM8S9kLWe-EpcI66qKE7LwZ9cwseiKfo9fRtSQyChZmUB1j1lSLWdkpxEyI78GzlRI6A9cLXXYx"; 
     $.getJSON({
         url: queryURL,
         method: "GET",
@@ -209,7 +177,7 @@ function greenSelected() {
     userLikedRestInfo.restarauntFoodType = locations[i].categories[0].title;
     userLikedRestInfo.restarauntPricePoint = locations[i].price;
     userLikedRestInfo.restarauntTelephoneNum = locations[i].display_phone;
-    userLikedRestInfo.restarauntAddress = locations[i].address1;
+    userLikedRestInfo.restarauntAddress = locations[i].location.address1;
     userLikedRestInfo.restarauntRating = locations[i].rating;
     userLikedRestInfo.restarauntDistance = metersToMiles(locations[i].distance);
     userLikedRestInfo.restarauntPhoto = locations[i].image_url;
@@ -224,20 +192,23 @@ $("#selected").hide();
 $("#green-check").on("click", function () {
     $(".card").toggle("slide", { direction: "right" }, 300);
     greenSelected();
-    $("#selected").toggle("slide", 300);
+    $("#selected").toggle("slide", {direction: "right"}, 500);
     $("#selectedName").append(userLikedRestInfo.restarauntName = locations[i].name);
     $("#selectedFoodType").append(userLikedRestInfo.restarauntFoodType = locations[i].categories[0].title);
     $("#selectedPrice").append(userLikedRestInfo.restarauntPricePoint = locations[i].price);
     $("#selectedPhone").append(userLikedRestInfo.restarauntTelephoneNum = locations[i].display_phone);
-    $("#selectedAddress").append(userLikedRestInfo.restarauntAddress = locations[i].address1);
-    $("#selectedRating").append(userLikedRestInfo.restarauntRating = locations[i].rating);
-    $("#selectedDitsance").append(userLikedRestInfo.restarauntDistance = metersToMiles(locations[i].distance));
+    $("#selectedAddress").append(userLikedRestInfo.restarauntAddress = locations[i].location.address1);
+    $("#selectedRating").text("Rating: " + (userLikedRestInfo.restarauntRating=locations[i].rating));
+    $("#selectedDistance").text(userLikedRestInfo.restarauntDistance = metersToMiles(locations[i].distance) + " mi");
     $("#selectedPic").attr("src", userLikedRestInfo.restarauntPhoto = locations[i].image_url);
     businessLatitude = userLikedRestInfo.restarauntLatitude;
     businessLongitude = userLikedRestInfo.restarauntLongitude;
     businessName = userLikedRestInfo.restarauntName;
     showMapPosition();
 });
+
+
+
 // Setting click event for red check (slide left)
 $("#red").on("click", function () {
     // Increment i, only if green check wasn't pressed so that we can use i to load results page
@@ -254,3 +225,10 @@ $("#red").on("click", function () {
         }
     }, 400);
 });
+
+
+
+// Setting dinder logo as home button
+$("#dinder").on("click", function() {
+    window.location.href = "index.html";
+})

@@ -16,15 +16,16 @@
         rel="stylesheet">
 
     <!--CSS Reference-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/restaurantswipes.css">
 </head>
 
 <body>
 
     <!--Header-->
-    <header>
-        <h6 id="dinder">dinder.</h6>
-    </header>
+    <nav class="orange darken-4">
+        <img src="assets/images/logo3.png" class="brand-logo right" id="dinder" alt=dinder>
+    </nav>
 
     <!-- "Food Card" -->
     <div class="card">
@@ -32,7 +33,7 @@
 
             <!--Restaurant Name-->
             <div id="restaurantName">
-                <h5 class="card-title"></h5>
+                <h5 class="card-title" id="restName"></h5>
             </div>
 
             <div id="details">
@@ -79,14 +80,21 @@
     <div id="selected">
         <div id="selectedDiv">
             <p id="selectedName"></p>
-            <p id="selectedFoodType"></p>
-            <p id="selectedPrice"></p>
-            <p id="selectedPhone"></p>
+            <div id="selectedDetails">
+                <p id="selectedDistance"></p>
+                <strong id="selectedMiddot">&middot;</strong>
+                <p id="selectedPhone"></p>
+                <strong id="selectedMiddot">&middot;</strong>
+                <p id="selectedPrice"></p>
+            </div>
             <p id="selectedAddress"></p>
             <p id="selectedRating"></p>
-            <p id="selectedDistance"></p>
+            <p id="selectedFoodType"></p>
+
             <p id="selectedPhoto"><img id="selectedPic"></p>
-            <div id="map"></div>
+            <div id="mapDiv">
+                <div id="map"></div>
+            </div>
         </div>
     </div>
 
