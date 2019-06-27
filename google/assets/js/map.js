@@ -180,7 +180,7 @@ function showMapPosition() {
 
 // Show users selection on the Google Maps
 function showChoicePosition() {
-    var contentString = businessName;
+    var contentString = String(businessName);
 
     console.log(contentString);
 
@@ -218,6 +218,7 @@ function yelpRequest() {
     }).then(function (res) {
         locations = res.businesses.slice();
         cycleChoices();
+        console.log(res);
     });
 }
 
@@ -278,7 +279,7 @@ function greenSelected() {
     userLikedRestInfo.restarauntFoodType = locations[i].categories[0].title;
     userLikedRestInfo.restarauntPricePoint = locations[i].price;
     userLikedRestInfo.restarauntTelephoneNum = locations[i].display_phone;
-    userLikedRestInfo.restarauntAddress = locations[i].address1;
+    userLikedRestInfo.restarauntAddress = locations[i].location.address1;
     userLikedRestInfo.restarauntRating = locations[i].rating;
     userLikedRestInfo.restarauntDistance = metersToMiles(locations[i].distance);
     userLikedRestInfo.restarauntPhoto = locations[i].image_url;
