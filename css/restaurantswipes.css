@@ -141,7 +141,7 @@ header {
 
 
 
-button {
+#green-check {
     background: transparent;
     border: 0;
     padding: 0;
@@ -152,7 +152,7 @@ button {
 
   
   /* Custom */
-  button {
+  #green-check {
     display: inline-block;
     position: relative;
     padding: 20px 38px;
@@ -160,7 +160,7 @@ button {
     font-size: 30px;
     font-family: "Open Sans", Helvetica;
  
-    background: rgba( 22, 230, 137, 1 );
+    
     color: #fff;
     box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
     
@@ -175,8 +175,8 @@ button {
             transition: all 0.2s ease;
   }
   
-  button:hover {
-    top: -10px;
+  #green-check:hover {
+    top: -15px;
     box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
     
     -webkit-transform: rotateX(20deg);
@@ -185,12 +185,55 @@ button {
             transform: rotateX(20deg);
   }
   
-  button:active {
+  #green-check:active {
     top: 0px;
     box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
     background: rgba( 20, 224, 133, 1 );
   }
 
+
+
+
+  /* Custom */
+  #red {
+    display: inline-block;
+    position: relative;
+    padding: 20px 38px;
+    top: 0;
+    font-size: 30px;
+    font-family: "Open Sans", Helvetica;
+ 
+    
+    color: #fff;
+    border: none;
+    box-shadow: 0px 0px 0px rgba(247, 247, 247, 0.411);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+  }
+  
+  #red:hover {
+    top: -15px;
+    box-shadow: 0px 10px 10px rgba(143, 24, 24, 0.404);
+    
+    -webkit-transform: rotateX(20deg);
+       -moz-transform: rotateX(20deg);
+        -ms-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+  }
+  
+  #red:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+    background: rgb(212, 36, 12);
+  }
 
 
 
@@ -208,6 +251,11 @@ button {
       height: 100px;
       margin-top: 40px;
       width: 150px;
+  }
+
+
+  #red:hover {
+      cursor: pointer;
   }
 
 
@@ -270,10 +318,10 @@ button {
         width: 52%;
         margin: 0 auto;
         margin-top: 150px;
-        margin-bottom: 200px;
-        opacity: .92;
-        background-color: rgb(32, 31, 31);
-        border: 1px solid rgb(32, 31, 31);
+        margin-bottom: 130px;
+        opacity: .97;
+        background-color: rgb(6, 9, 14);
+        border: 1px solid rgb(6, 9, 14);
     }
 
 
@@ -290,7 +338,7 @@ button {
         padding-top: 10;
         font-family: 'Bowlby One SC', cursive;
         font-size: 55px;
-        color: rgba(255, 255, 255, 0.836);
+        color: white;
         display: inline-block;
     }
 
@@ -302,63 +350,63 @@ button {
 
     #details {
         text-align: left;
-        font-weight: bold;
     }
 
 
     #phone {
-        color: rgba(255, 255, 255, 0.836);
-        font-family: 'Dosis', sans-serif;
+        color: white;
+        font-family: 'Fjalla One', sans-serif;
         font-size: 20px;
     }
 
 
     #distance {
-        color:rgba(255, 255, 255, 0.836);
+        color:rgb(143, 142, 142);
         margin-top: 15px;
         margin-left: 50px;
-        font-family: 'Dosis', sans-serif;
+        font-family: 'Fjalla One', sans-serif;
         font-size: 20px;
     }
 
 
     #price {
-        color: rgba(255, 255, 255, 0.836);
-        margin-left: 0;
-        font-family: 'Dosis', sans-serif;
+        color: white;
+        margin-left: 10px;
+        font-family: 'Fjalla One', sans-serif;
         font-size: 20px;
     }
 
 
     #rating {
-        color: rgba(255, 255, 255, 0.836);
-        font-family: 'Dosis', sans-serif;
+        color: white;
+        font-family: 'Fjalla One', sans-serif;
         font-size: 20px;
-        margin-top: 0;
+        margin-top: 5px;
         margin-left: 50px;
         text-align: left;
     }
     
     strong {
-        color: rgba(255, 255, 255, 0.836);
+        color: white;
         font-weight: bold;
     }
 
 
     #foodType {
-        font-family: 'Dosis', sans-serif;
+        font-family: 'Fjalla One', sans-serif;
         font-size: 20px;
-        color: rgba(255, 255, 255, 0.836);
+        color: white;
         margin-left: 50px;
+        margin-top: 5px;
         text-align: left;
     }
-
 
 
     #restPic {
         margin: 0 auto;
         height: 250px;
     }
+
 
     #checks {
         clear;
@@ -370,6 +418,60 @@ button {
         padding-bottom: 10px;
     }
 
+
+
+
+    #selectedName {
+        margin-top: 160px;
+        padding-top: 10px;
+        font-family: 'Bowlby One SC', cursive;
+        font-size: 55px;
+    }
+
+
+    #selectedFoodType {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedPrice {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedPhone {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedAddress {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedRating {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedDistance {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 20px;
+    }
+
+
+    #selectedPhoto {
+        text-align: center;
+
+        margin-bottom: 30px;
+    }
+
+    #map {
+        margin-top: 30px;
+    }
 }  
-
-
