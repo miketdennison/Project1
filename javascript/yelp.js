@@ -37,7 +37,11 @@ function showPosition(position) {
             var typeOfFood = res.businesses[0].categories[0].title;
             var restImage = res.businesses[0].image_url;
 
-        
+            var locations = res.businesses.slice();
+
+            for (i=0; i<locations.length; i++) {
+                console.log(locations[i])
+            }
 
         console.log(rating);
 
